@@ -51,4 +51,5 @@ def on_shutdown():
     ml_models.clear()
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=6099)
+    uvicorn.run(app, host="127.0.0.1", port=6087)
+
