@@ -28,12 +28,9 @@ async def generate_response(query: str):
             raise HTTPException(status_code=500, detail="System not fully initialized")
         
        
-        retrieved_info = retrieve_relevant_info(query)
+        context = retrieve_relevant_info(query)
         
-       
-        full_prompt = query + " " + " ".join(retrieved_info)
-        print(full_prompt)
-        messages = [("user", full_prompt)]
+        messages = [ ("system", f"You are a helpful assistant that gives the most suitable answer for the query, you can use {context} provided"),("user", full_prompt)]
         
         # Generate response
         response = llama2.invoke(messages)
