@@ -15,7 +15,7 @@ app = FastAPI()
 
 llama2 = None
 
-client = MongoClient("mongodb+srv://aryan0711:dopwgkQhtRuczojR@firstcluster.1sukz3j.mongodb.net/")
+client = MongoClient("mongodb+srv://aryan0711:<PASSWORD>@firstcluster.1sukz3j.mongodb.net/")
 db = client["chat_datasets"]
 session_col = db["chat_session"]
 chat_col = db["chat_history"]
